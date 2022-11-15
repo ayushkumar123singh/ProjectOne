@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .div1{
+                width: 400px;
+                height: 40px;
+                position: absolute;
+                left: 150px;
+                top: 155px;
+            }
+            .div2{
+                width: 400px;
+                height: 40px;
+                position: absolute;
+                left: 150px;
+                top: 260px;
+            }
+            .div3{
+                width: 400px;
+                height: 40px;
+                position: absolute;
+                left: 850px;
+                bottom: 490px;
+            }
+            .div4{
+                height: 50px;
+                width: 200px;
+                position: absolute;
+                top: 250px;
+                left: 800px;
+                background-color: darkgray;
+                border-color: darkgray;
+            }
+            .div5{
+                height: 50px;
+                width: 200px;
+                position: absolute;
+                top: 250px;
+                left: 1100px;
+                background-color: darkgray;
+                border-color: darkgray;
+            }
+            .div6{
+                width: 400px;
+                height: 40px;
+                position: absolute;
+                left: 850px;
+                top: 250px;
+            }
+            .tabcontainer{
+                position: absolute;  
+                top: 90px;
+                right: 5px;
+                width: 100%;
+                height: 690px;
+                border: solid 2px;
+                border-image: linear-gradient(to right, white, slategray);
+            }
+            .tabcontainer .buttoncontainer{
+                height: 9%;
+            }
+            .tabcontainer .buttoncontainer button{
+                display: inline-block;
+                background-color:lightgray;
+                border-top-left-radius: 50px;
+                border-top-right-radius: 90px;
+                border: 0px solid gray;
+                color: white;
+                text-align: center;
+                font-size: 28px;
+                padding-bottom: 3px;
+                width: 180px;
+                height: 60px;
+                transition: all 0.5s;
+                cursor: pointer;
+                margin-left: 7.3px;
+                position: absolute;
+                top: 2px;
+            } 
+            .tabcontainer .panelcontainer{
+                height: 92%;
+                background-color: white;
+                color: white;
+                text-align: center;
+                padding-top: 105px;
+                box-sizing: border-box;
+                font-size: 25px;
+                font-family: Verdana;
+                display: none;
+            }
+        </style>
+    </head>
+    <body style="padding: 20px; background-image: linear-gradient(to right, white, slategray);">
+        <!-- <form id="f1"> -->
+        <img style="position:absolute;top: 1px;" src="LOGO-removebg-preview.png" alt="Loading..." height="100px" width="620px">
+        <div class="tabcontainer">
+            <div class="buttoncontainer">
+                <button onclick="search_data(0,'gray')">Search</button>
+                <button style="position: absolute; left: 170px;" onclick="search_data(1,'gray')">Delete</button>
+                <button style="position: absolute; left: 340px;"onclick="search_data(2,'gray')">Update</button>
+            </div>
+            <div class="panelcontainer">
+                <div id="uid"></div>
+                <br><samp style="color: red; position: absolute; left: 235px;margin-top: 5px;" id="U_N"></samp><br>
+                
+                    <div id="cid"></div>
+                </select><br><samp style="color: red; position: absolute; left: 290px;margin-top: 35px;" id="C_N"></samp>
+                    
+                    <div id="mid"></div>
+                </select><br><samp style="color: red; position: absolute; left: 1015px; top: 200px;" id="M_N"></samp><br>
+                <input class="div4" type="button" name="Search" value="Search">
+                <input class="div5" type="button" name="Cancel" value="Cancel">
+            </div>
+            <div class="panelcontainer">
+                <select class="div1" id="u_n1">
+                    <option value="Select a University" hidden>Select a University</option>
+                    <option value="Kurushetra University">Kurushetra University</option>
+                    <option value="Kalinga University">Kalinga University</option>
+                    <option value="Patna University">Patna University</option>
+                    <option value="Delhi University">Delhi University</option>
+                    <option value="Chandigarh University">Chandigarh University</option>
+                    <option value="Punjab University">Punjab University</option>
+                </select><br><samp style="color: red; position: absolute; left: 235px;margin-top: 5px;" id="U_N1"></samp><br>
+                <select class="div2" id="c_n1">
+                    <option value="Select a Course" hidden>Select a Course</option>
+                    <option value="B-Tech">B-Tech</option>
+                    <option value="BBA">BBA</option>
+                    <option value="BCA">BCA</option>
+                    <option value="M-Tech">M-Tech</option>
+                    <option value="MBA">MBA</option>
+                    <option value="MCA">MCA</option>
+                    <option value="PGDCA">PGDCA</option>
+                </select><br><samp style="color: red; position: absolute; left: 290px;margin-top: 35px;" id="C_N1"></samp>
+                <select class="div3" id="m_n1">
+                    <option value="Select a mode" hidden>Select a mode</option>
+                    <option value="Online mode">Online mode</option>
+                    <option value="Regular mode">Regular mode</option>
+                    <option value="Distance mode">Distance mode</option>
+                    <option value="Private mode">Private mode</option>
+                    <option value="Vocational mode">Vocational mode</option>
+                </select><br><samp style="color: red; position: absolute; left: 1015px; top: 200px;" id="M_N1"></samp><br>
+                <input class="div4" type="button" name="Delete" value="Delete" onclick="finalcheck()">
+                <input class="div5" type="button" name="Cancel" value="Cancel">
+            </div>
+            <div class="panelcontainer">
+                <select class="div1" id="u_n2">
+                    <option value="Select anyone" hidden>Select Anyone</option>
+                    <option value="University Name">University Name</option>
+                    <option value="Course Name">Course Name</option>
+                </select><br><samp style="color: red; position: absolute; left: 235px;margin-top: 5px;" id="U_N2"></samp><br>
+                <select class="div6" id="c_n2">
+                    <option value="Select a Course" hidden>Select a Course</option>
+                    <option value="B-Tech">B-Tech</option>
+                    <option value="BBA">BBA</option>
+                    <option value="BCA">BCA</option>
+                    <option value="M-Tech">M-Tech</option>
+                    <option value="MBA">MBA</option>
+                    <option value="MCA">MCA</option>
+                    <option value="PGDCA">PGDCA</option>
+                </select><br><samp style="color: red; position: absolute; left: 290px;margin-top: 35px;" id="C_N2"></samp>
+                <select class="div3" id="m_n2">
+                    <option value="Select a University" hidden>Select a University</option>
+                    <option value="Kurushetra University">Kurushetra University</option>
+                    <option value="Kalinga University">Kalinga University</option>
+                    <option value="Patna University">Patna University</option>
+                    <option value="Delhi University">Delhi University</option>
+                    <option value="Chandigarh University">Chandigarh University</option>
+                    <option value="Punjab University">Punjab University</option>
+                </select><br><samp style="color: red; position: absolute; left: 1015px; top: 200px;" id="M_N2"></samp><br>
+                <!-- <input class="div4" type="button" name="Search" value="Search" onclick="finalcheck()">
+                <input class="div5" type="button" name="Cancel" value="Cancel"> -->
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            var tab_but=document.querySelectorAll(".tabcontainer .buttoncontainer button");
+            var pan_val=document.querySelectorAll(".tabcontainer .panelcontainer");
+            function search_data(index, col_val) 
+            {
+                tab_but.forEach(function(data){
+                    data.style.backgroundColor="";
+                    data.style.color="";
+                });
+                tab_but[index].style.backgroundColor=col_val;
+                tab_but[index].style.Color="white";
+                pan_val.forEach(function(data){
+                    data.style.display="none";
+                });
+                pan_val[index].style.display="block";
+                pan_val[index].style.backgroundColor=col_val;    
+            }
+            search_data(0,'gray')
+            // var flag=true;
+            //     function checkblank(id1,id2,msg) 
+            //         {
+            //             var name=document.getElementById(id1).value;
+            //             if (id1=='u_n' || id1=='c_n' ||id1=='m_n')
+            //             {
+            //                 var a=document.getElementById(id1).value;
+            //                 if(a=='Select a University' || a=='Select a Course' || a=='Select a mode')
+            //                 {
+            //                     document.getElementById(id2).innerHTML=msg
+            //                     document.getElementById(id1).style.border="solid 2px red"
+            //                     return false;
+            //                 }
+            //                 return true;
+            //             }
+            //         } 
+            //         function cleardata(id1,id2) 
+            //         {
+            //             document.getElementById(id2).innerHTML=" " 
+            //             document.getElementById(id1).style.border="solid 2px black" 
+            //         }
+                    // function finalcheck() 
+                    // {
+                    //     checkblank('u_n','U_N','*University  is required');
+                    //     checkblank('c_n','C_N','*course is required'); 
+                    //     checkblank('m_n','M_N','*mode is required'); 
+                    // }
+        </script>
+        <script>
+         $(document).ready(function(){
+            $.ajax({
+                        url:'mdi.py',
+                        method:'post',
+                        success:function(data){
+                            s=data.split(',,,')
+                            $('#uid').html(s[0])
+                            $('#cid').html(s[1])
+                            $('#mid').html(s[2])
+                            // alert(s[2])
+                        }     
+                   });
+        });
+        </script>
+        <!-- </form> -->
+    </body>
+</html>
