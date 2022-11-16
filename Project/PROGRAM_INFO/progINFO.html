@@ -267,7 +267,8 @@
                         else if (id1=='p_n')
                         {
                             var b=document.getElementById(id1).value;
-                            if(b>=65 && b<=90 || b>=97 && b<=122 || b==45 || b==46)
+                            // alert(b)
+                            if( b>=65 && b<=90 || b>=97 && b<=122 || b==45 || b==46 )
                             {
                                 document.getElementById(id2).innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp *digit not allow'
                                 document.getElementById(id1).style.border='solid 2px red'
