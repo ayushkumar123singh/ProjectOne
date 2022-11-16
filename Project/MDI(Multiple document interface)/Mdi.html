@@ -109,7 +109,7 @@
                     
                     <div id="mid"></div>
                 </select><br><samp style="color: red; position: absolute; left: 1015px; top: 200px;" id="M_N"></samp><br>
-                <input class="div4" type="button" name="Search" value="Search">
+                <input class="div4" type="button" name="Search" id="s" value="Search">
                 <input class="div5" type="button" name="Cancel" value="Cancel">
             </div>
             <div class="panelcontainer">
@@ -232,6 +232,14 @@
                             // alert(s[2])
                         }     
                    });
+        });
+        $("#s").click(function(){
+            var c1= $("#u_n options:selected").val();
+            alert(c1)
+            var c2= $("#c_n options:selected").val();
+            alert(c2)
+            var c3= $("#m_n options:selected").val();
+            alert(c3)
         });
         </script>
         <!-- </form> -->
