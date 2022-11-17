@@ -94,7 +94,7 @@
                 margin-left: 980px;
                 position: absolute;
                 top: 240px;
-                height: 45px;
+                height: 35px;
                 width: 395px;
                 }
             .t7{
@@ -180,18 +180,33 @@
                 box-shadow: 5px 5px 10px black;
             }
             .a{
-                height: 30px;
-                width: 45px;
+                height: 16px;
+                width: 14px;
                 position: absolute;
-                left: 644px;
-                top: 190px;
+                left: 669px;
+                top: 199px;
             }
             .b{
-                height: 30px;
-                width: 45px;
+                height: 16px;
+                width: 14px;
                 position: absolute;
-                left: 1400px;
-                top: 90px;
+                left: 1426px;
+                top: 99px;
+            }
+            label[title]:hover::after{
+                content: attr(title);
+                border: 2px solid red;
+                visibility: hidden;
+            }
+            .edit_1{
+                position: absolute;
+                left: 640px;
+                top: 200px;
+            }
+            .edit_2{
+                position: absolute;
+                left: 1396px;
+                top: 100px;
             }
         </style>
     </head>
@@ -243,8 +258,12 @@
                 <option value="NCRI">National Council for Rural Institutes (NCRI)</option>
                 <option value="SCHE">State Councils of Higher Education (SCHE)</option>
             </select>
-            <input class="a" type="button" name="BUTTON_1" id="BUTTON_1" value="ADD" onclick="edit_one()"><br>
-            <input class="b" type="button" name="BUTTON_2" id="BUTTON_2" value="ADD" onclick="edit_one()"><br>
+            <label class="tooltip" title="use ',' before edit!"><input class="a" type="radio" name="BUTTON_1" id="BUTTON_1"  onclick="edit_one()">
+                <label class="edit_1" for="BUTTON_1">Edit:</label></label>
+            <br>
+            <label class="tooltip" title="use ',' before edit!"><input class="b" type="radio" name="BUTTON_2" id="BUTTON_2" onclick="edit_two()">
+                <label class="edit_2" for="BUTTON_2">Edit:</label></label>
+            <br>
             <input type="text" name="add_2" id="add_2" class="t7d" readonly><br>
             <label for="e" style="margin-left: 745px; font-size: 20px; position: absolute;top:255px;">University Website Link:</label>
             <input id="e" class="t6" type="text" name="eli1" onfocusout="checkblank('e','E','*Website link must be required')" onfocusin="cleardata('e','E')"><br>
@@ -282,6 +301,9 @@
            {
                 document.getElementById('BUTTON_1')
                 document.getElementById('add_1').removeAttribute('readonly');
+           }
+           function edit_two()
+           {
                 document.getElementById('BUTTON_2')
                 document.getElementById('add_2').removeAttribute('readonly');
            }
