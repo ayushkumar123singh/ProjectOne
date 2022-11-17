@@ -50,38 +50,49 @@
                 background-color: lightgrey;
             } */
                 .t1{
-                    margin-left: 30px;
-                    margin-top: 20px;
+                    position: absolute;
+                    top: 60px;
+                    left: 240px;
+                    height: 35px;
+                    width: 350px;
+                }
+                .t1a{
+                    position: absolute;
+                    top: 130px;
+                    left: 240px;
                     height: 35px;
                     width: 350px;
                 }
                 .t2{
-                    margin-left: 40px;
-                    margin-top: 30px;
+                    position: absolute;
+                    left: 240px;
+                    top: 195px;
                     height: 32px;
-                    width: 344px;
+                    width: 342px;
                 }
                 .t3{
                     position: absolute;
-                    top: 550px;
-                    left: 300px;
+                    top: 73px;
+                    left: 1200px;
                 }
                 .t4{
-                    margin-left: 50px;
-                    margin-top: 30px;
+                    position: absolute;
+                    top: 310px;
+                    left: 226px;
                     height: 39px;
                     width: 357px;
                 }
                 .t4a{
-                    margin-left: 43px;
-                    margin-top: 30px;
+                    position: absolute;
+                    top: 400px;
+                    left: 226px;
                     height: 39px;
                     width: 357px;
                 }
                 .t5{
                     position: absolute;
-                    top: 550px;
-                    left: 220px;
+                    top: 73px;
+                    left: 1020px;
                 }
                 .t6{
                     margin-left: 500px;
@@ -98,18 +109,11 @@
                     width: 200px;
                     background-color: darkgrey;
                     border-color: darkgrey;
-                } 
-                .t14{
-                    position: absolute;
-                    left: 200px;
-                    top: 150px;
-                    height: 30px;
-                    width: 300px;
-                }   
+                }
                 .t8{
                     padding-left: 50px;
                     margin-left: 20px;
-                    margin-top: 23px;
+                    margin-top: 60px;
                     height: 35px;
                     width: 350px;
                     position: absolute;
@@ -124,7 +128,7 @@
                 .t9{
                     padding-left: 50px;
                     margin-left: 30px;
-                    margin-top: 40px;
+                    margin-top:70px;
                     height: 35px;
                     width: 350px;
                     position: absolute;
@@ -139,7 +143,7 @@
                 .t10{
                     padding-left: 50px;
                     margin-left: 30px;
-                    margin-top: 120px;
+                    margin-top: 158px;
                     height: 35px;
                     width: 350px;
                     position: absolute;
@@ -154,7 +158,7 @@
                 .t11{
                     padding-left: 50px;
                     margin-left: 30px;
-                    margin-top: 190px;
+                    margin-top: 240px;
                     height: 35px;
                     width: 350px;
                     position: absolute;
@@ -169,7 +173,7 @@
                 .t12{
                     padding-left: 50px;
                     margin-left: 30px;
-                    margin-top: 260px;
+                    margin-top: 320px;
                     height: 35px;
                     width: 350px;
                     position: absolute;
@@ -184,7 +188,7 @@
                 .t13{
                     margin-left: 202px;
                     position: absolute;
-                    top: 450px;
+                    top: 500px;
                     height: 60px;
                     width: 352px;
                 }
@@ -203,22 +207,18 @@
                 <h2 style="position: absolute; bottom: 55px; margin-left: 500px;">Program Details</h2>
             </div>
             <div class="div4">
-                <label for="u_n" style="margin-left: 30px; font-size: 20px;">University Name:</label>
-                <select id="u_n" class="t1" name="uni_name">
-                    <option value="Select a University" hidden>Select a University</option>
-                    <option value="Kurushetra University">Kurushetra University</option>
-                    <option value="Kalinga University">Kalinga University</option>
-                    <option value="Patna University">Patna University</option>
-                    <option value="Delhi University">Delhi University</option>
-                    <option value="Chandigarh University">Chandigarh University</option>
-                    <option value="Punjab University">Punjab University</option>
-                </select><br><samp style="color: red; margin-left: 330px;" id="U_N"></samp><br>
-                <label for="p_n" style="margin-left: 30px; font-size: 20px;">Program Name:</label>
+                <label for="u_n" style=" position: absolute;left: 52px; top: 70px; font-size: 20px;">University Name:</label>
+                <div id="uid"></div>
+                <br><samp style="color: red; margin-left: 330px;" id="U_N"></samp><br>
+                <label for="m" style="font-size: 20px; position: absolute;left: 52px; top: 130px;">Mode:</label>
+                <div id="mid"></div>
+                <br>
+                <label for="p_n" style="position: absolute;left: 52px; top: 200px; font-size: 20px;">Program Name:</label>
                 <input id="p_n" class="t2" type="text" name="pro_name" onfocusout="checkblank('p_n','P_N','*Program name is required')" onfocusin="cleardata('p_n','P_N')"><br>
                 <samp style="color: red; margin-left: 380px;" id="P_N"></samp><br>
-                <input style="margin-left: 200px;margin-top: 30px;" type="checkbox" name="l" id="lat" value="Lateral Entry"><label style="font-size: 20px;">Lateral Entry</label><br>
+                <input style="margin-left: 200px;margin-top: 130px;" type="checkbox" name="l" id="lat" value="Lateral Entry"><label style="font-size: 20px;">Lateral Entry</label><br>
                 <!-- <samp  style="color: red; position: absolute;top: 227px;left: 400px;" id="LAT"></samp> -->
-                <label for="dur" style="margin-left: 30px; font-size: 20px;">Min. Duration:</label>
+                <label for="dur" style="position: absolute;left:50px; top: 320px; font-size: 20px;">Min. Duration:</label>
                 <select id="dur" class="t4" name="duration" onfocusin="cleardata('dur','DUR')">
                     <option value="Select a Duration" hidden>Select a Duration</option>
                     <option value="1">1</option>
@@ -227,7 +227,7 @@
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select><br><samp style="color: red; margin-left: 330px;" id="DUR"></samp><br>
-                <label for="dur2" style="margin-left: 30px; font-size: 20px;">Max. Duration:</label>
+                <label for="dur2" style="position: absolute;left: 50px;top: 400px; font-size: 20px;">Max. Duration:</label>
                 <select id="dur2" class="t4a" name="duration" onfocusin="cleardata('dur2','DUR2')">
                     <option value="Select a Duration" hidden>Select a Duration</option>
                     <option value="1">1</option>
@@ -236,40 +236,30 @@
                     <option value="4">4</option>
                     <option value="5">5</option> 
                 </select><br><samp style="color: red; margin-left: 330px;" id="DUR2"></samp><br>
-                <label for="e" style="margin-left: 30px; font-size: 20px; position: absolute;top: 470px;">Eligibility:</label>
+                <label for="e" style="margin-left: 30px; font-size: 20px; position: absolute;top: 500px;">Eligibility:</label>
                 <input id="e" class="t13" type="textarea" name="eli" onfocusout="checkblank('e','E','*Eligibility is required')" onfocusin="cleardata('e','E')">
                 <samp style="color: red; position: absolute; top: 520px;margin-left: 383px;" id="E"></samp>
-                <label for="sess" style="margin-left: 30px; font-size: 20px; position: absolute; top: 545px;">Session:</label>
-                <input class="t5" id="sess" type="checkbox" name="s" onfocusout="validate('s','SESS','*Session must be required')" onfocusin="cleardata('sess','SESS')" value="Jan"> <label style="margin-left: 230px; position: absolute;top: 550px;">Jan</label>
-                <input class="t3" id="sess" type="checkbox" name="s"  value="July" onfocusin="cleardata('sess','SESS')"> <label style="margin-left: 300px; position: absolute;top: 550px;">July</label><samp style="position: absolute;top: 550px;left: 380px; color: red;" id="SESS"></samp>
-                <label for="pro" style="font-size: 20px; position: absolute;top: 80px; margin-left: 790px; ">Program fees:</label><br>
+                <label for="sess" style="margin-left: 792px; font-size: 20px; position: absolute; top: 70px;">Session:</label>
+                <input class="t5" id="sess" type="checkbox" name="s" onfocusout="validate('s','SESS','*Session must be required')" onfocusin="cleardata('sess','SESS')" value="Jan"> <label style="margin-left: 1020px; position: absolute;top: 74px;">Jan</label>
+                <input class="t3" id="sess" type="checkbox" name="s"  value="July" onfocusin="cleardata('sess','SESS')"> <label style="margin-left: 1200px; position: absolute;top: 74px;">July</label><samp style="position: absolute;top: 550px;left: 380px; color: red;" id="SESS"></samp>
+                <label for="pro" style="font-size: 20px; position: absolute;top: 120px; margin-left: 794px; ">Program fees:</label><br>
                 <input id="pro" class="t8" type="number" name="pro_fee" onfocusout="checkblank('pro','PRO','*Program fees is required')" onfocusin="cleardata('pro','PRO')"><br>
                 <samp style="color: red; position: absolute;top: 115px;margin-left: 1230px;" id="PRO"></samp>
-                <label for="adm" style="font-size: 20px; position: absolute;top: 155px; margin-left: 794px;">Admission fees:</label><br>
+                <label for="adm" style="font-size: 20px; position: absolute;top: 190px; margin-left: 794px;">Admission fees:</label><br>
                 <input id="adm" class="t9" type="number" name="admission_fee"><br>
                 <!-- <samp style="color: red;position: absolute;top: 190px;margin-left: 1215px;" id="ADM"></samp> -->
-                <label for="exam" style="font-size: 20px; position: absolute;top: 230px; margin-left: 794px;">Exam fees:</label><br>
+                <label for="exam" style="font-size: 20px; position: absolute;top: 270px; margin-left: 794px;">Exam fees:</label><br>
                 <input id="exam" class="t10" type="number" name="exam_fee" onfocusout="checkblank('exam','EXAM','*Exam fees is required')" onfocusin="cleardata('exam','EXAM')"><br>
                 <samp style="color: red; position: absolute;top: 260px; margin-left: 1250px;" id="EXAM"></samp>
-                <label for="ser" style="font-size: 20px; position: absolute;top: 300px; margin-left: 794px;">Services charge:</label><br>
+                <label for="ser" style="font-size: 20px; position: absolute;top: 350px; margin-left: 794px;">Services charge:</label><br>
                 <input id="ser" class="t11" type="number" name="ser_charge" onfocusout="checkblank('ser','SER','*Services charge is required')" onfocusin="cleardata('ser','SER')"><br>
                 <samp style="color: red; position: absolute;top: 330px;margin-left: 1210px;" id="SER"></samp>
-                <label for="ref" style="font-size: 20px; position: absolute;top: 375px; margin-left: 794px;">Refereal amount:</label><br>
+                <label for="ref" style="font-size: 20px; position: absolute;top: 430px; margin-left: 794px;">Refereal amount:</label><br>
                 <input id="ref" class="t12" type="number" name="ref_amount" onfocusout="checkblank('ref','REF','*Refereal amount is required')" onfocusin="cleardata('ref','REF')"><br>
                 <samp style="color: red; position: absolute;top: 400px;margin-left: 1210px;" id="REF"></samp>
                 <input style="margin-left:800px;position: absolute;top: 480px;" class="t6" type="button" name="submit" id="sub" value="SUBMIT">
-                <input style="margin-left:1100px;position: absolute;top: 480px;" class="t7" type="reset" name="cancel" value="CLEAR">    
+                <input style="margin-left:1100px;position: absolute;top: 480px;" class="t7" type="reset" name="cancel" value="NEXT" onclick="refreshPage()">    
                 </div>
-                <label style="margin-left:45px;font-size:20px;position:absolute;top:200px;">Mode</label>
-                <select name="mode" id="m" class="t14"
-                <option value="sfsf" hidden>Select any one</option>
-                <option value="Online">Online</option>
-                <option value="Regular">Regular</option>
-                <option value="Private">Private</option>
-                <option value="Distance">Distance</option>
-                <option value="Vocational">Vocational</option>
-                <option value="Part Time">Part Time</option>
-                <option value="Full Time">Full Time</option>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                 <script>
                     var flag=true;
@@ -281,16 +271,16 @@
                             document.getElementById(id2).innerHTML=msg 
                             document.getElementById(id1).style.border="solid 2px red"
                         }  
-                        else if (id1=='p_n')
-                        {
-                            var b=document.getElementById(id1).value;
-                            // alert(b)
-                            if( b>=65 && b<=90 || b>=97 && b<=122 || b==45 || b==46 )
-                            {
-                                document.getElementById(id2).innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp *digit not allow'
-                                document.getElementById(id1).style.border='solid 2px red'
-                            }
-                        } 
+                        // else if (id1=='p_n')
+                        // {
+                        //     var b=document.getElementById(id1).value;
+                        //     if(b == 33,34,35,36,'37','38','39','40','41','42','43','44','47','48','49','50','51','52','53','54','55','56','57','58',
+                        //     '59','60','61','62','63','64','91','92','93','94','95','96','123','124','125','126','127')
+                        //     {
+                        //         document.getElementById(id2).innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp *digit not allow'
+                        //         document.getElementById(id1).style.border='solid 2px red'
+                        //     }
+                        // } 
                         else if (id1=='u_n' || id1=='dur' ||id1=='dur2')
                         {
                             var a=document.getElementById(id1).value;
@@ -349,11 +339,16 @@
                         // }
                         // return true;
                     }
+                    function refreshPage()
+                    {
+                         window.location.reload();
+                    }
                     $('#sub').click(function()
                     {
                       finalcheck();
                       if(flag){
                         var a=$('#u_n').val();
+                        var x=$('#m_n').val();
                         var b=$('#p_n').val();
                         var lat=''
                         var c=document.getElementsByName('l')
@@ -382,7 +377,9 @@
                             url:'progINFO.py',
                             method:'post',
                             data:{
+                                x:"edit",
                                 u_n:a,
+                                m_n:x,
                                 p_n:b,
                                 lat2:lat,
                                 dur:d,
@@ -400,7 +397,18 @@
                             }
                         });
                     }
-                    });   
+                    }); 
+                    $(document).ready(function(){
+                        $.ajax({
+                                    url:'progINFO.py',
+                                    method:'post',
+                                    success:function(data){
+                                        s=data.split(',,,')
+                                        $('#uid').html(s[0])
+                                        $('#mid').html(s[1])
+                                }     
+                            });
+                    });
                 </script>
         </div>
     </body>
