@@ -29,14 +29,14 @@ try:
     else:
         x.execute("select distinct u_name from university_info")
         res=x.fetchall()
-        print("""<select id="u_n" class="t1" name="uni_name"> <option value="Select a University" hidden>Select a University</option>""")
+        print("""<select id="u_n" class="t1" name="uni_name" onfocusin="cleardata('u_n','U_N')"> <option value="Select a University" hidden>Select a University</option>""")
         for a in res:
             print("<option>"+a[0]+"</option>")
         print("<select>,,,")
         #########################################################################################################################################################
         x.execute("select distinct mode from university_info")
         res=x.fetchall()
-        print("""<select class="t1a" id="m_n" name="mo_name"> <option value="ma" hidden>Select a mode</option>""")
+        print("""<select class="t1a" id="m_n" name="mo_name" onfocusin="cleardata('m_n','M_N')"> <option value="ma" hidden>Select a mode</option>""")
         p=set()
         for a in res:
             a=a[0].split(',')

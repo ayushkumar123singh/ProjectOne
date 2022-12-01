@@ -225,7 +225,7 @@
             <div class="div5">
         </div>
             <label for="u_n" style="margin-left: 45px; font-size: 20px;position: absolute;top: 100px;">University Name:</label>
-            <input id="u_n" class="t5" type="text" name="uni_name"><br>
+            <input id="u_n" class="t5" type="text" name="uni_name" onfocusin="cleardata('u_n','U_N')"><br>
             <samp style="color: red; margin-left: 420px; position: absolute;bottom: 300px;" id="U_N"></samp><br>
             <label style="margin-left: 45px; font-size: 20px;position: absolute;top: 200px;">Mode:</label>
             <select name="mode" id="m" class="t7">
@@ -281,6 +281,33 @@
                 {
                     document.getElementById(id2).innerHTML=msg
                     document.getElementById(id1).style.border="solid 2px red"    
+                }
+                // if(id1=="e")
+                // {
+                //     var web=document.getElementById(id1).value;
+                //     alert(web)
+                //     s1=web.substring(length(web)-3,length(web))
+                //     s2=web.substring(length(web)-4,length(web))
+                //     if(s1!='.' || s2!='.')
+                //     {
+                //         document.getElementById(id2).innerHTML="wrong website"
+                //         document.getElementById(id1).style.border="solid 2px red"
+                //     }
+                        
+                // }
+                if (id1=='e')
+                {
+                    var web=document.getElementById(id1).value; 
+                    if(web.charAt(web.length-3)=='.' || web.charAt(web.length-4)=='.')
+                    {
+                        document.getElementById(id2).innerHTML=""
+                        document.getElementById(id1).style.border="solid 2px black"
+                    }
+                    else
+                    {
+                        document.getElementById(id2).innerHTML="*Incorrect website"
+                        document.getElementById(id1).style.border="solid 2px red"
+                    }
                 }
            }
            function cleardata(id1,id2) 
@@ -355,7 +382,7 @@
                 var choosen = $("#m option:selected");
                 if(choosen.text()=='Select any one')
                 {
-                  alert("Please select the mode")
+                //   alert("Please select the mode")
                 }
                 else{
                     s1=s1+choosen.text()+',';
@@ -368,7 +395,7 @@
                 var choosen = $("#u_r option:selected");
                 if(choosen.text()=='Select any one')
                 {
-                  alert("Please select the mode")
+                //   alert("Please select the mode")
                 }
                 else{
                     s2=s2+choosen.text()+',';
