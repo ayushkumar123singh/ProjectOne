@@ -184,14 +184,14 @@
                 width: 14px;
                 position: absolute;
                 left: 669px;
-                top: 199px;
+                top: 259px;
             }
             .b{
                 height: 16px;
                 width: 14px;
                 position: absolute;
                 left: 1426px;
-                top: 99px;
+                top: 159px;
             }
             label[title]:hover::after{
                 content: attr(title);
@@ -201,12 +201,12 @@
             .edit_1{
                 position: absolute;
                 left: 640px;
-                top: 200px;
+                top: 260px;
             }
             .edit_2{
                 position: absolute;
                 left: 1396px;
-                top: 100px;
+                top: 160px;
             }
         </style>
     </head>
@@ -237,8 +237,12 @@
                 <option value="Vocational">Vocational</option>
                 <option value="Part Time">Part Time</option>
                 <option value="Full Time">Full Time</option>
-            </select><br>
-            <input type="text" name="add_1" id="add_1" class="t7b" readonly>
+            </select>
+            <br>
+            <input type="text" name="add_1" id="add_1" class="t7b" disabled="disabled">
+            <label class="tooltip" title="use ',' before edit!">
+            <input class="a" type="checkbox" name="BUTTON_1" id="BUTTON_1" onclick="edit_one()">
+            <label class="edit_1" for="BUTTON_1">Edit:</label><br>
             <label for="u_r" style="margin-left: 730px; font-size: 20px;position: absolute;top: 100px;">University Recogintion:</label>
             <select name="uni_rec" id="u_r" class="t7c">
                 <option value="Select any one recogintion" hidden>Select any one</option>
@@ -258,13 +262,11 @@
                 <option value="NCRI">National Council for Rural Institutes (NCRI)</option>
                 <option value="SCHE">State Councils of Higher Education (SCHE)</option>
             </select>
-            <label class="tooltip" title="use ',' before edit!"><input class="a" type="radio" name="BUTTON_1" id="BUTTON_1"  onclick="edit_one()">
-                <label class="edit_1" for="BUTTON_1">Edit:</label></label>
             <br>
-            <label class="tooltip" title="use ',' before edit!"><input class="b" type="radio" name="BUTTON_2" id="BUTTON_2" onclick="edit_two()">
-                <label class="edit_2" for="BUTTON_2">Edit:</label></label>
-            <br>
-            <input type="text" name="add_2" id="add_2" class="t7d" readonly><br>
+            <input type="text" name="add_2" id="add_2" class="t7d" disabled="disabled">
+            <label class="tooltip" title="use ',' before edit!">
+            <input class="b" type="checkbox" name="BUTTON_2" id="BUTTON_2" onclick="edit_one()">
+            <label class="edit_2" for="BUTTON_2">Edit:</label><br>
             <label for="e" style="margin-left: 745px; font-size: 20px; position: absolute;top:255px;">University Website Link:</label>
             <input id="e" class="t6" type="text" name="eli1" onfocusout="checkblank('e','E','*Website link must be required')" onfocusin="cleardata('e','E')"><br>
             <samp style="color:red;position: absolute;top: 297px;margin-left: 1170px;" id="E"></samp><br>
@@ -326,13 +328,20 @@
            }
            function edit_one()
            {
-                document.getElementById('BUTTON_1')
-                document.getElementById('add_1').removeAttribute('readonly');
-           }
-           function edit_two()
-           {
-                document.getElementById('BUTTON_2')
-                document.getElementById('add_2').removeAttribute('readonly');
+                var s1=document.getElementById('BUTTON_1');
+                var s2=document.getElementById('BUTTON_2');
+                if (s1.checked==true) 
+                {
+                    document.getElementById('add_1').disabled=false;
+                }
+                else
+                    document.getElementById('add_1').disabled=true;
+                if (s2.checked==true) 
+                {
+                    document.getElementById('add_2').disabled=false;
+                }
+                else
+                    document.getElementById('add_2').disabled=true;
            }
            $('#sub').click(function()
            {
