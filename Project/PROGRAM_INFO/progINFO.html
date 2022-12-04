@@ -336,19 +336,19 @@
                     }
                     function finalcheck() 
                     {
-                        flag=true;
-                        flag=checkblank('p_n','P_N','*Program name is required');
-                        flag=checkblank('m_n','M_N','*You have to select one of them');
-                        flag=checkblank('e','E','*Eligibility is required'); 
-                        flag=checkblank('pro','PRO','*Program fees is required'); 
+                        // flag=true;
+                        checkblank('p_n','P_N','*Program name is required');
+                        checkblank('m_n','M_N','*You have to select one of them');
+                        checkblank('e','E','*Eligibility is required'); 
+                        checkblank('pro','PRO','*Program fees is required'); 
                         checkblank('adm','ADM','*Admission fees is required'); 
-                        flag=checkblank('exam','EXAM','*Exam fees is required'); 
-                        flag=checkblank('ser','SER','*Services charge is required'); 
-                        flag=checkblank('ref','REF','*Refereal amount is required');
-                        flag=validate('s','SESS','*Session must be required');
-                        flag=checkblank('u_n','U_N','*You have to select one of them');  
-                        flag=checkblank('dur','DUR','*You have to select one of them'); 
-                        flag=checkblank('dur2','DUR2','*You have to select one of them'); 
+                        checkblank('exam','EXAM','*Exam fees is required'); 
+                        checkblank('ser','SER','*Services charge is required'); 
+                        checkblank('ref','REF','*Refereal amount is required');
+                        validate('s','SESS','*Session must be required');
+                        checkblank('u_n','U_N','*You have to select one of them');  
+                        checkblank('dur','DUR','*You have to select one of them'); 
+                        checkblank('dur2','DUR2','*You have to select one of them'); 
                         
                     }
                     function validate(name,id2,msg) 
@@ -376,14 +376,14 @@
                       finalcheck();
                       if(flag){
                         var a=$('#u_n').val();
-                        var x=$('#m_n').val();
-                        var b=$('#p_n').val();
+                        var b=$('#m_n').val();
+                        var c=$('#p_n').val();
                         var lat=''
-                        var c=document.getElementsByName('l')
-                        for(var i=0 ; i<c.length ; i++)
+                        var c_1=document.getElementsByName('l')
+                        for(var i=0 ; i<c_1.length ; i++)
                         {
-                            if(c[i].checked)
-                               lat=lat+c[i].value 
+                            if(c_1[i].checked)
+                               lat=lat+c_1[i].value 
                         }
                         var d=$('#dur').val();
                         var e=$('#dur2').val();
@@ -407,13 +407,13 @@
                             data:{
                                 x:"edit",
                                 u_n:a,
-                                m_n:x,
-                                p_n:b,
+                                m_n:b,
+                                p_n:c,
                                 lat2:lat,
                                 dur:d,
                                 dur2:e,
                                 e:f,
-                                sess:str,
+                                s:str,
                                 pro:h,
                                 adm:i,
                                 exam:j,
@@ -428,14 +428,15 @@
                     }); 
                     $(document).ready(function(){
                         $.ajax({
-                                    url:'progINFO.py',
-                                    method:'post',
-                                    success:function(data){
-                                        s=data.split(',,,')
-                                        $('#uid').html(s[0])
-                                        $('#mid').html(s[1])
+                                url:'progINFO.py',
+                                method:'post',
+                                success:function(data)
+                                {
+                                    s=data.split(',,,')
+                                    $('#uid').html(s[0])
+                                    $('#mid').html(s[1])
                                 }     
-                            });
+                        });
                     });
                 </script>
         </div>
